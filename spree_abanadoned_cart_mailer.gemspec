@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_abandoned_cart_mailer'
-  s.version     = '0.1'
+  s.version     = '0.2'
   s.summary     = 'Send reminder emails for abandoned carts'
   s.description = ''
   s.required_ruby_version = '>= 2.0.0'
