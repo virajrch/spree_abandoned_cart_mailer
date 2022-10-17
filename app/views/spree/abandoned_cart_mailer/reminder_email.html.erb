@@ -1,0 +1,66 @@
+<!-- preview text -->
+<div class="email_summary">
+  <%= Spree.t('abandoned_cart_mailer.reminder_email.subject')%>
+</div>
+<!-- clears extra text from preview  -->
+<div class="email_summary">
+  &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+</div>
+
+<%= render partial: "spree/shared/base_mailer_header" %>
+
+<!-- hero_alt -->
+<table role="presentation" class="email_table" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tbody>
+    <tr>
+      <td class="email_body tc">
+        <!--[if (mso)|(IE)]><table role="presentation" width="640" border="0" cellspacing="0" cellpadding="0" align="center" style="vertical-align:top;width:640px;Margin:0 auto;"><tbody><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+        <table role="presentation" class="content_section" width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td class="content_cell content_b py tc">
+                <table role="presentation" class="column" width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tbody>
+                    <tr>
+                      <td class="column_cell py tc">
+                        <table role="presentation" class="ic_h" align="center" width="80" border="0" cellspacing="0" cellpadding="0">
+                          <tbody>
+                            <tr>
+                              <td class="">
+                                <%= image_tag(bitmize_url_for(asset_path("mailer/cart_mailer_icon_min.png")), alt: "Cart", width:"80", height:"80") %>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <h1>You've items in your cart!</h1>
+                        <p class="lead tm">
+                          <%= Spree.t('abandoned_cart_mailer.reminder_email.instructions') %>
+                        </p>
+                        <table role="presentation" class="ebtn tc" align="center"  border="0" cellspacing="0" cellpadding="0">
+                          <tbody>
+                            <tr>
+                              <td class="accent_b">
+                                <%= link_to @cart_url do %>
+                                  <span>View Cart</span>
+                                <% end %>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!--[if (mso)|(IE)]></td></tr></tbody></table><![endif]-->
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- product_extended -->
+<%= render 'spree/shared/purchased_items_table', line_items: @order.line_items, order: @order %>
+<!-- Footer -->
+<%= render partial: "spree/shared/base_mailer_footer" %>

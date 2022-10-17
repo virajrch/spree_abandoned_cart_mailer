@@ -1,0 +1,11 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  hello: "Hello world"
+  spree:
+    abandoned_cart_mailer: 
+      reminder_email:
+        instructions: "Click the View Cart Button below to recover your cart"
+        subject: "You've left a few items in your Thingbits cart"
+        email_sent: "Reminder Sent!"
