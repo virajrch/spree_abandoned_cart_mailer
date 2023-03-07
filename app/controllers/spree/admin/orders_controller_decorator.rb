@@ -13,3 +13,4 @@ module Spree
     end
   end
 end
+Spree::Admin::OrdersController.prepend Spree::Admin::OrdersControllerDecorator
